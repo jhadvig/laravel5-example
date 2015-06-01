@@ -45,44 +45,18 @@ return [
 	*/
 
 	'connections' => [
-
-		'sqlite' => [
-			'driver'   => 'sqlite',
-			'database' => storage_path().'/database.sqlite',
-			'prefix'   => '',
-		],
-
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'laravel_base'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', ''),
+			'host'      => env('DATABASE_SERVICE_HOST', '172.17.42.1'),
+			'port'      => env('DATABASE_SERVICE_PORT', 3306),
+			'database'  => env('DATABASE_NAME', 'db'),
+			'username'  => env('DATABASE_USER', 'user'),
+			'password'  => env('DATABASE_PASSWORD', 'pass'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		],
-
-		'pgsql' => [
-			'driver'   => 'pgsql',
-			'host' 	   => env('DB_HOST', 'localhost'),
-			'database' => env('DB_DATABASE', 'forge'),
-			'username' => env('DB_USERNAME', 'forge'),
-			'password' => env('DB_PASSWORD', ''),
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		],
-
-		'sqlsrv' => [
-			'driver'   => 'sqlsrv',
-			'host' 	   => env('DB_HOST', 'localhost'),
-			'database' => env('DB_DATABASE', 'forge'),
-			'username' => env('DB_USERNAME', 'forge'),
-			'password' => env('DB_PASSWORD', ''),
-			'prefix'   => '',
-		],
-
+			'strict'    => false,
+		]
 	],
 
 	/*
